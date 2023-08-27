@@ -30,12 +30,3 @@ Start the development server on http://localhost:3000
 ```bash
 npm run dev
 ```
-
-## Production
-
-
-// https://github.com/nuxt-modules/plausible
-// https://github.com/nuxt/devtools
-// https://github.com/nuxt-themes/docus
-
-```
