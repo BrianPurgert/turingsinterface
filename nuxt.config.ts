@@ -1,5 +1,9 @@
 export default defineNuxtConfig({
+	extends: '@nuxt-themes/docus',
+	
 	modules: [
-		'@nuxthq/ui'
+		'@nuxthq/ui',
+		'@nuxtjs/plausible',
+		'@nuxt/devtools'
 	]
 })

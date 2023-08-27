@@ -33,16 +33,9 @@ npm run dev
 
 ## Production
 
-Build the application for production:
 
-```bash
-npm run build
+// https://github.com/nuxt-modules/plausible
+// https://github.com/nuxt/devtools
+// https://github.com/nuxt-themes/docus
+
 ```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
