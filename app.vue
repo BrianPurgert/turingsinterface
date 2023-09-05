@@ -1,6 +1,34 @@
 <template >
 	  <UContainer class = "mt-4" >
 			<UCard >
+				  <UInput
+						v-model = "df_url"
+						name = "df_url"
+						type = "url"
+						placeholder = "https://..."
+						icon = "i-heroicons-globe-alt"
+						:ui = "{ icon: { trailing: { pointer: '' } } }"
+				  >
+						<template #trailing >
+							  <UButton
+									color = "blue"
+									@click = "execute"
+
+							  >Fetch
+							  </UButton >
+
+							  <UButton
+									v-show = "df_url !== ''"
+									color = "gray"
+									variant = "link"
+									icon = "i-heroicons-x-mark-20-solid"
+									:padded = "false"
+									@click = "df_url = ''"
+							  />
+						</template >
+				  </UInput >
+			</UCard >
+			<UCard >
 				  <UAccordion :items = "items" >
 						<template #item = "{ item }" >
 							  <p class = "italic text-gray-900 dark:text-white text-center" >
@@ -42,34 +70,7 @@
 				  <span >pending: {{ pending }} </span >
 				  <span >error:{{ error }} </span >
 			</UCard >
-			<UCard >
-				  <UInput
-						v-model = "df_url"
-						name = "df_url"
-						type = "url"
-						placeholder = "https://..."
-						icon = "i-heroicons-globe-alt"
-						:ui = "{ icon: { trailing: { pointer: '' } } }"
-				  >
-						<template #trailing >
-							  <UButton
-									color = "blue"
-									@click = "execute"
 
-							  >Fetch
-							  </UButton >
-
-							  <UButton
-									v-show = "df_url !== ''"
-									color = "gray"
-									variant = "link"
-									icon = "i-heroicons-x-mark-20-solid"
-									:padded = "false"
-									@click = "df_url = ''"
-							  />
-						</template >
-				  </UInput >
-			</UCard >
 	  </UContainer >
 
 </template >
@@ -85,7 +86,7 @@ const items = [{
 const df_url = ref('')
 
 
-const {data: datafile, pending, error, execute} = await useFetch('http://dev.brianpurgert2.com/api', {
+const {data: datafile, pending, error, execute} = await useFetch('https://dev.brianpurgert2.com/api', {
 		query: {url: df_url}, immediate: false, watch: false
 })
 
