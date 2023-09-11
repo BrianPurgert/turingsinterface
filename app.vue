@@ -1,6 +1,8 @@
 <template >
 	  <UContainer class = "mt-4" >
 			<UCard >
+				  <template #header />
+
 				  <UInput
 						v-model = "df_url"
 						name = "df_url"
@@ -11,10 +13,10 @@
 				  >
 						<template #trailing >
 							  <UButton
-									color = "blue"
+									variant = "ghost"
 									@click = "execute"
-
-							  >Fetch
+									icon = "i-heroicons-bars-arrow-down"
+							  >
 							  </UButton >
 
 							  <UButton
@@ -27,6 +29,8 @@
 							  />
 						</template >
 				  </UInput >
+
+				  <template #footer />
 			</UCard >
 			<UCard >
 				  <UAccordion :items = "items" >
@@ -35,38 +39,58 @@
 									{{ item.description }} </p >
 						</template >
 						<template #getting-started >
-							  <div class = "flex flex-col justify-center items-center gap-1" >
-									<NuxtLink
-										  to = "/getting-started"
-										  class = "flex items-end gap-1.5 font-bold text-xl text-gray-900 dark:text-white"
-									>
-										  <Logo class = "w-8 h-8 text-primary-500 dark:text-primary-400" />
-										  <span class = "hidden sm:block" >NuxtLabs</span ><span
-										  class = "sm:text-primary-500 dark:sm:text-primary-400" >UI</span >
-									</NuxtLink >
-									<p class = "text-sm text-gray-500 dark:text-gray-400" >
-										  Fully styled and customizable components for Nuxt. </p >
-							  </div >
+
 						</template >
 						<template #installation = "{ description }" >
-							  <div class = "flex flex-col justify-center items-center gap-1 mb-4" >
-									<h3 class = "text-xl font-bold text-gray-900 dark:text-white" >
-										  Installation </h3 >
-									<p class = "text-sm text-gray-500 dark:text-gray-400" >
-										  Install <code >@nuxthq/ui</code > dependency to your project: </p >
-									<p >
-										  {{ description }} </p >
-							  </div >
-							  <div class = "flex flex-col items-center" >
-									<code >$ npm install @nuxtlabs/ui</code >
-									<code >$ nnpm install -D @nuxthq/ui</code >
-									<code >$ pnpm i -D @nuxthq/ui</code >
-							  </div >
+
 						</template >
 				  </UAccordion >
 
-				  <span >URL:   {{ df_url }} </span >
-				  <pre >{{ datafile }} </pre >
+				  <span >URL: {{ df_url }} </span >
+
+
+				  <UCard v-for = "(value, key) in datafile" :key = "key" >
+						<h2 >{{ key }}</h2 > <!-- Display the Query Key -->
+
+						<div v-for = "(subValue, subKey) in value" :key = "subKey" >
+							  <h3 >{{ subKey }}</h3 > <!-- Display the Identifier -->
+
+							  <p >Url: {{ subValue.url }}</p > <!-- Display the URL -->
+
+							  <h4 >Content</h4 >
+							  <ul >
+									<li v-for = "(content, index) in subValue.content" :key = "index" >
+										  {{ content }} <!-- Display each item of content -->
+									</li >
+							  </ul >
+						</div >
+				  </UCard >
+
+
+				  <!--
+				  API response schema make it pretty to display with v-for:
+				  {
+										"url": "string",
+										"page": "string",
+										"<Query_Key_1>": {
+											"<Identifier_1>": {
+												"url": "string",
+												"content": ["string", "string", ...]
+											},
+											...
+										},
+										"<Query_Key_2>": {
+											"<Identifier_2>": {
+												"url": "string",
+												"content": ["string", "string", ...]
+											},
+											...
+										},
+										...
+									}
+
+									-->
+
 				  <span >pending: {{ pending }} </span >
 				  <span >error:{{ error }} </span >
 			</UCard >
@@ -86,14 +110,9 @@ const items = [{
 const df_url = ref('')
 
 
-const {data: datafile, pending, error, execute} = await useFetch('https://dev.brianpurgert2.com/api', {
+const {data: datafile, pending, error, execute} = await useFetch('https://getthis.page/api', {
 		query: {url: df_url}, immediate: false, watch: false
 })
-
-
-const fetchData = () => {
-		execute()
-}
 
 
 </script >
