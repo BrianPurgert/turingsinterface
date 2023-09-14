@@ -49,50 +49,40 @@
 				  <span >URL: {{ df_url }} </span >
 
 
-				  <UCard v-for = "(value, key) in datafile" :key = "key" >
-						<h2 >{{ key }}</h2 > <!-- Display the Query Key -->
+				  <UTabs
+						:items = "datafile"
+						orientation = "vertical"
+						:ui = "{ wrapper: 'flex items-center gap-4', list: { width: 'w-48' } }"
+				  />
 
-						<div v-for = "(subValue, subKey) in value" :key = "subKey" >
-							  <h3 >{{ subKey }}</h3 > <!-- Display the Identifier -->
 
-							  <p >Url: {{ subValue.url }}</p > <!-- Display the URL -->
+				  <UCard
+						v-for = "(value, key, index) in datafile"
+						:key = "key"
+						class = "w-full"
+						:ui = "{
+      					base: '',
+      					ring: '',
+      					divide: 'divide-y divide-gray-200 dark:divide-gray-700',
+      					header: { padding: 'px-4 py-5' },
+      					body: { padding: '', base: 'divide-y divide-gray-200 dark:divide-gray-700' },
+      					footer: { padding: 'p-4' }
+    }"
+				  >
+						<template #header >
+							  <h2 class = "font-semibold text-xl text-gray-900 dark:text-white leading-tight" >
+									{{ key }}
+							  </h2 >
 
-							  <h4 >Content</h4 >
-							  <ul >
-									<li v-for = "(content, index) in subValue.content" :key = "index" >
-										  {{ content }} <!-- Display each item of content -->
-									</li >
-							  </ul >
-						</div >
+						</template >
+						<template #default >
+
+							  <pre >{{ value }}</pre >
+
+						</template >
 				  </UCard >
 
 
-				  <!--
-				  API response schema make it pretty to display with v-for:
-				  {
-										"url": "string",
-										"page": "string",
-										"<Query_Key_1>": {
-											"<Identifier_1>": {
-												"url": "string",
-												"content": ["string", "string", ...]
-											},
-											...
-										},
-										"<Query_Key_2>": {
-											"<Identifier_2>": {
-												"url": "string",
-												"content": ["string", "string", ...]
-											},
-											...
-										},
-										...
-									}
-
-									-->
-
-				  <span >pending: {{ pending }} </span >
-				  <span >error:{{ error }} </span >
 			</UCard >
 
 	  </UContainer >
