@@ -38,7 +38,7 @@
                     v-model:selectedValue="selectedPath"
                     :selectOnClickNode="true"
                     :showSelectController="true"
-                    
+
                     showIcon="true"
                     :deep="4"
             ></myJson>
