@@ -1,108 +1,92 @@
-<template >
-	  <UContainer class = "mt-4" >
-			<UCard >
-				  <template #header />
+<template>
+    <UContainer class="mt-4">
+        <UCard>
+            <template #header/>
 
-				  <UInput
-						v-model = "df_url"
-						name = "df_url"
-						type = "url"
-						placeholder = "https://..."
-						icon = "i-heroicons-globe-alt"
-						:ui = "{ icon: { trailing: { pointer: '' } } }"
-				  >
-						<template #trailing >
-							  <UButton
-									variant = "ghost"
-									@click = "execute"
-									icon = "i-heroicons-bars-arrow-down"
-							  >
-							  </UButton >
+            <UInput
+                    v-model="df_url"
+                    name="df_url"
+                    type="url"
+                    placeholder="https://..."
+                    icon="i-heroicons-globe-alt"
+                    :ui="{ icon: { trailing: { pointer: '' } } }"
+            >
+                <template #trailing>
+                    <UButton
+                            variant="ghost"
+                            @click="execute"
+                            icon="i-heroicons-bars-arrow-down"
+                    >
+                    </UButton>
 
-							  <UButton
-									v-show = "df_url !== ''"
-									color = "gray"
-									variant = "link"
-									icon = "i-heroicons-x-mark-20-solid"
-									:padded = "false"
-									@click = "df_url = ''"
-							  />
-						</template >
-				  </UInput >
+                    <UButton
+                            v-show="df_url !== ''"
+                            color="gray"
+                            variant="link"
+                            icon="i-heroicons-x-mark-20-solid"
+                            :padded="false"
+                            @click="df_url = ''"
+                    />
+                </template>
+            </UInput>
 
-				  <template #footer />
-			</UCard >
-			<UCard >
-				  <UAccordion :items = "items" >
-						<template #item = "{ item }" >
-							  <p class = "italic text-gray-900 dark:text-white text-center" >
-									{{ item.description }} </p >
-						</template >
-						<template #getting-started >
+            <template #footer/>
+        </UCard>
+        <UCard>
+            <myJson
+                    :data="datafile"
+                    v-model:selectedValue="selectedPath"
+                    :selectOnClickNode="true"
+                    :showSelectController="true"
+                    
+                    showIcon="true"
+                    :deep="4"
+            ></myJson>
 
-						</template >
-						<template #installation = "{ description }" >
+            <UAccordion :items="items">
+                <template #item="{ item }">
+                    <p class="italic text-gray-900 dark:text-white text-center">
+                        {{ item.description }} </p>
+                </template>
+                <template #getting-started>
 
-						</template >
-				  </UAccordion >
+                </template>
+                <template #installation="{ description }">
 
-				  <span >URL: {{ df_url }} </span >
-
-
-				  <UTabs
-						:items = "datafile"
-						orientation = "vertical"
-						:ui = "{ wrapper: 'flex items-center gap-4', list: { width: 'w-48' } }"
-				  />
-
-
-				  <UCard
-						v-for = "(value, key, index) in datafile"
-						:key = "key"
-						class = "w-full"
-						:ui = "{
-      					base: '',
-      					ring: '',
-      					divide: 'divide-y divide-gray-200 dark:divide-gray-700',
-      					header: { padding: 'px-4 py-5' },
-      					body: { padding: '', base: 'divide-y divide-gray-200 dark:divide-gray-700' },
-      					footer: { padding: 'p-4' }
-    }"
-				  >
-						<template #header >
-							  <h2 class = "font-semibold text-xl text-gray-900 dark:text-white leading-tight" >
-									{{ key }}
-							  </h2 >
-
-						</template >
-						<template #default >
-
-							  <pre >{{ value }}</pre >
-
-						</template >
-				  </UCard >
+                </template>
+            </UAccordion>
 
 
-			</UCard >
+            <u-card v-for="(value, key, index) in datafile" :key="key" :label="key" class="m-1">
+                <span class="text-xl">{{ key }}</span>
+                <u-card v-for="(a_value, a_key, a_index) in value" :key="a_key">
 
-	  </UContainer >
 
-</template >
+                </u-card>
+            </u-card>
 
-<script setup lang = "ts" >
+
+        </UCard>
+
+    </UContainer>
+
+</template>
+
+<script setup lang="ts">
+import Displaydatafile from "~/Displaydatafile.vue"
+
 const items = [{
-		label: 'Getting Started', icon: 'i-heroicons-information-circle', defaultOpen: true, slot: 'getting-started'
+    label: "Getting Started", icon: "i-heroicons-information-circle", defaultOpen: true, slot: "getting-started"
 }, {
-		label: 'Installation', icon: 'i-heroicons-arrow-down-tray', defaultOpen: true, slot: 'installation'
-}, {
-		label: 'Theming', icon: 'i-heroicons-eye-dropper', defaultOpen: true, description: ''
+    label: "Installation", icon: "i-heroicons-arrow-down-tray", defaultOpen: true, slot: "installation"
 }]
-const df_url = ref('')
+const df_url = ref("")
 
 
-const {data: datafile, pending, error, execute} = await useFetch('https://getthis.page/api', {
-		query: {url: df_url}, immediate: false, watch: false
+const {data: datafile, pending, error, execute} = await useFetch("https://getthis.page/api", {
+    query: {url: df_url}, immediate: false, watch: false
 })
+const selectedPath = ref("")
 
 
-</script >
+</script>
