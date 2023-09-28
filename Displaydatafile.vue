@@ -1,6 +1,6 @@
 <template>
     <UCard>
-        
+
     </UCard>
 </template>
 <script>

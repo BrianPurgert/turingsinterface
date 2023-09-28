@@ -32,41 +32,17 @@
 
             <template #footer/>
         </UCard>
-        <UCard>
-            <myJson
-                    :data="datafile"
-                    v-model:selectedValue="selectedPath"
-                    :selectOnClickNode="true"
-                    :showSelectController="true"
 
-                    showIcon="true"
-                    :deep="4"
-            ></myJson>
+        <myJson
+                :data="datafile"
+                v-model:selectedValue="selectedPath"
+                :selectOnClickNode="true"
+                :showSelectController="true"
 
-            <UAccordion :items="items">
-                <template #item="{ item }">
-                    <p class="italic text-gray-900 dark:text-white text-center">
-                        {{ item.description }} </p>
-                </template>
-                <template #getting-started>
+                showIcon="true"
+                :deep="4"
+        ></myJson>
 
-                </template>
-                <template #installation="{ description }">
-
-                </template>
-            </UAccordion>
-
-
-            <u-card v-for="(value, key, index) in datafile" :key="key" :label="key" class="m-1">
-                <span class="text-xl">{{ key }}</span>
-                <u-card v-for="(a_value, a_key, a_index) in value" :key="a_key">
-
-
-                </u-card>
-            </u-card>
-
-
-        </UCard>
 
     </UContainer>
 
