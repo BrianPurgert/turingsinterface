@@ -1,17 +1,17 @@
-<template>
-    <UCard>
+<template >
+	  <UCard >
 
-    </UCard>
-</template>
-<script>
+	  </UCard >
+</template >
+<script >
 
 
 export default {
-    name: 'displaydatafile',
+	name: "displaydatafile",
 
-    setup() {
-        const data = ref(null)
-        return {data}
-    }
+	setup() {
+		const data = ref(null)
+		return { data }
+	}
 }
-</script>
+</script >

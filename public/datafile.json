@@ -2,83 +2,83 @@
   "url": "https://gsaadvantage-test.fas.gsa.gov/advantage/ws/search/advantage_search?q=0:8desktop&db=0&searchType=0",
   "page": "advantage_search",
   "gsin": {
-	"12000012828225": {
-	  "url": "/advantage/ws/catalog/product_detail?gsin=12000012828225",
-	  "content": [
-		"5049D5U",
-		"ThinkCentre M81 5049D5U Desktop Computer",
-		"Mfr: Lenovo Group Limited",
-		"from",
-		"$",
-		"1,000.12",
-		"From 14 source",
-		"s",
-		"Includes:",
-		"d",
-		"w",
-		"o",
-		"wo",
-		"ew",
-		"8a",
-		"dv",
-		"h",
-		"Description",
-		"Premium performers. Efficient cost-cutters. Convenient space-savers. Whatever your need, we have the professional-strength desktops to meet it. All designed to simplify management,..."
-	  ]
-	},
-	"12000001465392": {
-	  "url": "/advantage/ws/catalog/product_detail?gsin=12000001465392",
-	  "content": [
-		"6071A3U",
-		"ThinkCentre M57 Desktop",
-		"Mfr: Lenovo Group Limited",
-		"from",
-		"$",
-		"828.50",
-		"From 5 source",
-		"s",
-		"Includes:",
-		"d",
-		"dv",
-		"w",
-		"wo",
-		"Description",
-		"ThinkCentre M57 desktop makes power seem effortless. It features steel chassis design for durability and serviceability and supports the latest technologies to help keep you ahead ..."
-	  ]
-	},
-	"12000001465396": {
-	  "url": "/advantage/ws/catalog/product_detail?gsin=12000001465396",
-	  "content": [
-		"6071B9U",
-		"ThinkCentre M57 Desktop",
-		"Mfr: Lenovo Group Limited",
-		"from",
-		"$",
-		"736.05",
-		"From 4 source",
-		"s",
-		"Includes:",
-		"d",
-		"w",
-		"wo",
-		"Description",
-		"ThinkCentre M57 desktop makes power seem effortless. It features steel chassis design for durability and serviceability and supports the latest technologies to help keep you ahead ..."
-	  ]
-	}
+    "12000012828225": {
+      "url": "/advantage/ws/catalog/product_detail?gsin=12000012828225",
+      "content": [
+        "5049D5U",
+        "ThinkCentre M81 5049D5U Desktop Computer",
+        "Mfr: Lenovo Group Limited",
+        "from",
+        "$",
+        "1,000.12",
+        "From 14 source",
+        "s",
+        "Includes:",
+        "d",
+        "w",
+        "o",
+        "wo",
+        "ew",
+        "8a",
+        "dv",
+        "h",
+        "Description",
+        "Premium performers. Efficient cost-cutters. Convenient space-savers. Whatever your need, we have the professional-strength desktops to meet it. All designed to simplify management,..."
+      ]
+    },
+    "12000001465392": {
+      "url": "/advantage/ws/catalog/product_detail?gsin=12000001465392",
+      "content": [
+        "6071A3U",
+        "ThinkCentre M57 Desktop",
+        "Mfr: Lenovo Group Limited",
+        "from",
+        "$",
+        "828.50",
+        "From 5 source",
+        "s",
+        "Includes:",
+        "d",
+        "dv",
+        "w",
+        "wo",
+        "Description",
+        "ThinkCentre M57 desktop makes power seem effortless. It features steel chassis design for durability and serviceability and supports the latest technologies to help keep you ahead ..."
+      ]
+    },
+    "12000001465396": {
+      "url": "/advantage/ws/catalog/product_detail?gsin=12000001465396",
+      "content": [
+        "6071B9U",
+        "ThinkCentre M57 Desktop",
+        "Mfr: Lenovo Group Limited",
+        "from",
+        "$",
+        "736.05",
+        "From 4 source",
+        "s",
+        "Includes:",
+        "d",
+        "w",
+        "wo",
+        "Description",
+        "ThinkCentre M57 desktop makes power seem effortless. It features steel chassis design for durability and serviceability and supports the latest technologies to help keep you ahead ..."
+      ]
+    }
   },
   "p": {
-	"2": {
-	  "url": "/advantage/ws/search/advantage_search?q=0:8desktop&searchType=0&db=0&p=2",
-	  "content": [
-		"2",
-		"Next"
-	  ]
-	},
-	"3": {
-	  "url": "/advantage/ws/search/advantage_search?q=0:8desktop&searchType=0&db=0&p=3",
-	  "content": [
-		"3"
-	  ]
-	}
+    "2": {
+      "url": "/advantage/ws/search/advantage_search?q=0:8desktop&searchType=0&db=0&p=2",
+      "content": [
+        "2",
+        "Next"
+      ]
+    },
+    "3": {
+      "url": "/advantage/ws/search/advantage_search?q=0:8desktop&searchType=0&db=0&p=3",
+      "content": [
+        "3"
+      ]
+    }
   }
 }
