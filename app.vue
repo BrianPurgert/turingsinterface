@@ -2,6 +2,31 @@
   <UContainer class="mt-4">
     <UCard>
       <template #header>
+        <UCard class="">
+          <div class="mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3">
+            <h1>Heuristic Data Parser: Reverse Engineering an API</h1>
+            <p>
+              Simply enter the URL of the page you want to reverse engineer and press enter. The tool will fetch the
+              page
+              and parse it. The result will be structured JSON. If you're familiar with data
+              transformation or you've done data scraping , yes it's essentially a univeral scraper for
+            </p>
+            <p>
+              In the context of web development, a key/value parameterized API typically refers to an API that accepts
+              parameters in the form of key-value pairs. These parameters can be used to filter, sort, or specify the
+              data
+              that the API will return. Such APIs are commonly RESTful and can accept key-value pairs in several ways;
+              the
+              parser is designed for a specific type.
+            </p>
+            <code>
+              <strong>Query Parameters:</strong> Appended to the URL after the "?" symbol. <br>
+              <strong>Example:</strong> GET /users<span class="text-green-500 font-semibold">?name=John&age=30</span>
+            </code>
+
+
+          </div>
+        </UCard>
         <UInput
             v-model="df_url"
             name="df_url"
@@ -32,35 +57,52 @@
         <UButton
             icon="i-heroicons-beaker"
             @click="df_url = 'https://getthis.page/test_page.html'"
-            color="primary"
+
             variant="link"
             label="Test Page"
-            :trailing="false"
+
         />
         <UButton
             icon="i-heroicons-shopping-cart"
             @click="df_url = 'https://www.gsaadvantage.gov/advantage/ws/catalog/product_detail?gsin=11000058302095'"
-            color="primary"
+
             variant="link"
             label="Product Detail Page"
-            :trailing="false"
+
         />
         <UButton
             icon="i-heroicons-building-library"
             @click="df_url = 'https://www.gsaelibrary.gsa.gov/ElibMain/scheduleList.do?catid=1066&famid=1060&sched=yes'"
-            color="primary"
+
             variant="link"
             label="GSA eLibrary"
-            :trailing="false"
+
         />
         <UButton
             icon="i-heroicons-building-library"
             @click="df_url = 'https://www.amazon.com/gp/bestsellers/'"
-            color="primary"
             variant="link"
             label="Amazon"
-            :trailing="false"
         />
+        <UButton
+            icon="i-heroicons-building-library"
+            @click="df_url = 'https://www.gsaadvantage.gov/advantage/ws/search/mfr_list?q=1:4ADV.OFF.*&c=25&s=10&searchType=1'"
+            variant="link"
+            label="Gov"
+        />
+        <UButton
+            icon="i-heroicons-building-library"
+            @click="df_url = 'https://www.gsaadvantage.gov/advantage/ws/search/vnd_list?q=1:4ADV.OFF.*&c=25&s=10&searchType=1'"
+            variant="link"
+            label="Gov"
+        />
+        <UButton
+            icon="i-heroicons-building-library"
+            @click="df_url = 'https://www.gsaadvantage.gov/advantage/ws/search/vnd_list?q=1:4****&listFor=All'"
+            variant="link"
+            label="Gov"
+        />
+
 
       </template>
       <template #default>
@@ -92,7 +134,6 @@
         </template>
       </template>
       <template #footer>
-
 
       </template>
     </UCard>
