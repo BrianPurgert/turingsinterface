@@ -1,30 +1,21 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <UContainer class="mt-4">
     <UCard>
       <template #header>
         <UCard class="">
+          <h1>Heuristic Universal Scraper Demo</h1>
           <div class="mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3">
-            <h1>Heuristic Data Parser: Reverse Engineering an API</h1>
             <p>
-              Simply enter the URL of the page you want to reverse engineer and press enter. The tool will fetch the
-              page
-              and parse it. The result will be structured JSON. If you're familiar with data
-              transformation or you've done data scraping , yes it's essentially a univeral scraper for
-            </p>
-            <p>
-              In the context of web development, a key/value parameterized API typically refers to an API that accepts
-              parameters in the form of key-value pairs. These parameters can be used to filter, sort, or specify the
-              data
-              that the API will return. Such APIs are commonly RESTful and can accept key-value pairs in several ways;
-              the
-              parser is designed for a specific type.
-            </p>
-            <code>
-              <strong>Query Parameters:</strong> Appended to the URL after the "?" symbol. <br>
-              <strong>Example:</strong> GET /users<span class="text-green-500 font-semibold">?name=John&age=30</span>
-            </code>
+              enter the URL of the page you want to scrape and press enter. The tool will fetch the
+              page, parse it, transform the page data, The result will be structured JSON, shaped for a graph database.
 
+              if you would just like to see how it transforms a webpage, you can use the test page.
+              <br/><a href="https://getthis.page/test_page.html" class="text-blue-600 font-bold">https://getthis.page/test_page.html</a><br/>
+              <a href="https://getthis.page/api?url=https://getthis.page/test_page.html"
+                 class="text-blue-600 font-bold">https://getthis.page/api?url=https://getthis.page/test_page.html</a>
+              (large page)
 
+            </p>
           </div>
         </UCard>
         <UInput

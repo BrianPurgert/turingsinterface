@@ -1,21 +1,21 @@
 {
-    "private":         true,
-    "scripts":         {
-        "build":       "nuxt build",
-        "dev":         "nuxt dev",
-        "generate":    "nuxt generate",
-        "preview":     "nuxt preview",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
-        "upgrade":     "nuxi upgrade --force"
+        "upgrade": "nuxi upgrade --force"
     },
-    "dependencies":    {
+    "dependencies": {
         "vue-json-pretty": "^2.2.4"
     },
     "devDependencies": {
-        "@nuxt/content":  "^2.8.5",
-        "@nuxt/devtools": "^1.0.0",
-        "@nuxt/ui":       "npm:@nuxt/ui-edge@latest",
-        "@types/node":    "^20.8.9",
-        "nuxt":           "^3.8.0"
+        "@nuxt/content": "^2.9.0",
+        "@nuxt/devtools": "^1.0.4",
+        "@nuxt/ui": "npm:@nuxt/ui-edge@latest",
+        "@types/node": "^20.10.2",
+        "nuxt": "^3.8.2"
     }
 }
