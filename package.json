@@ -9,13 +9,13 @@
         "upgrade": "nuxi upgrade --force"
     },
     "dependencies": {
-        "vue-json-pretty": "^2.2.4"
+        "vue-json-pretty": "^2.4.0"
     },
     "devDependencies": {
-        "@nuxt/content": "^2.9.0",
-        "@nuxt/devtools": "^1.0.4",
+        "@nuxt/content": "^2.12.1",
+        "@nuxt/devtools": "^1.2.0",
         "@nuxt/ui": "npm:@nuxt/ui-edge@latest",
-        "@types/node": "^20.10.2",
-        "nuxt": "^3.8.2"
+        "@types/node": "^20.12.7",
+        "nuxt": "3.11.2"
     }
 }
