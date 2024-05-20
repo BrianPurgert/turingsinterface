@@ -1,5 +1,20 @@
 <template xmlns = "http://www.w3.org/1999/html" >
+	  <UHorizontalNavigation :links="links"
+			class='bg-background/75 backdrop-blur border-b -mb-px sticky top-0 z-50 border-gray-200 dark:border-gray-800 pl-3 '>
+
+
+		<template #default="{ link }">
+	  		<span class="group-hover:text-primary relative ">{{ link.label }}</span>
+		</template>
+
+
+
+
+	  </UHorizontalNavigation>
+
+	  <ColorModeButton />
 	  <UContainer class = "mt-4" >
+
 			<UCard >
 				  <template #header >
 						<UCard class = "" >
@@ -141,7 +156,15 @@
 </style >
 
 <script setup lang = "ts" >
+const route = useRoute()
 
+const links = [{
+	label: 'Portfolio',
+	to: 'https://brianpurgert2.com'
+}, {
+	label: 'Home',
+	to: '/'
+}]
 
 const df_url       = ref('')
 const selectedPath = ref('')

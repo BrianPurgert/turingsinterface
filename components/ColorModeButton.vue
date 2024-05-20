@@ -6,6 +6,7 @@
         variant="ghost"
         aria-label="Theme"
         @click="isDark = !isDark"
+		  class='fixed top-2 right-2 z-50 p-2'
     />
 
     <template #fallback>
